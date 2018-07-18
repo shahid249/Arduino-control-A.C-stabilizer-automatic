@@ -18,3 +18,5 @@ then arduino will calculate in watt and show in to the LCD display.
 
 It also monitor temperature of the transformer, 
 if temperature is getting high of the set point, it will turn on the fan.
+
+Make this stabilizer Follow Instructables -> https://www.instructables.com/id/How-to-Make-AC-220-Volt-Automatic-Stabilizer-Using/
