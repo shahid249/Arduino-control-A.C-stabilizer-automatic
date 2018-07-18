@@ -1,5 +1,6 @@
 /*Code by SHAHID
-  How to make this stabilizer See the Instructables ->
+  How to make this stabilizer See the 
+  Instructables -> https://www.instructables.com/id/How-to-Make-AC-220-Volt-Automatic-Stabilizer-Using/
 */
 // include the library code start
 #include <ACS712.h> //ACS712 current sensor library | Download - https://github.com/shahid249/ACS712-arduino-1
