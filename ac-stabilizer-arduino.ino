@@ -52,44 +52,47 @@ LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
        */
      // Calibrating area - end//
 
-     //transformer steps changing upon receiving voltage - area - start//
-           int steps_1 = 0; //0 voltage to show no line
+     //Here you can set transfor steps voltage - Note this is 3 steps transformer - start//
+           int steps_1 = 0; //start 0 voltage to show no line
       
-           // this will show Low Voltage, if potection switch is on, then the relay3 will active, if the set voltage value is reach - start
+           // Low voltage, In this voltage range power will be cut - start
            int steps_2_1 = 1; //if greater than 1V
            int steps_2_2 = 130; //if greater than 130V
-           // this will show Low Voltage, if potection switch is on, then the relay3 will active, if the set voltage value is reach - end
-
+           // Low voltage, In this voltage range power will be cut - end
+      /* 
+      Before adding transformer steps check the voltage of each steps, then set the desire voltage when to switch the steps
+      example - if voltage is 180v step 3 will add up 50v = 230v
+      */
        //transformer steps 3 start//
-           // this will active the realy 2, if set voltage value reach - start
+           // In this voltage range relay 2 will activate - start
            int steps_3_1 = 130; // if greater than 130V
            int steps_3_2 = 180; //if smaller than 180V
-           int boost_addup_2 = 50; //The voltage addup in this steps by transformer, your might be differnt
-           // this will active the realy 2, if set voltage value reach - end
+           int boost_addup_2 = 50; //The voltage addup in this steps by transformer. Use for displaying output voltage, your might be differnt
+           // In this voltage range relay 2 will activate - end
        //transformer steps 3 end//
 
        //transformer steps 2 start//
-           // this will active the realy 1 and deactivate relay 2, if set voltage value reach - start
+           // In this voltage range relay 1 will activate, relay 2 will deactivate - start
            int step_4_1 = 180; // if greater than 180V
            int step_4_2 = 210; //if smaller than 210V
-           int boost_addup_1 = 20;//The voltage addup in this steps by transformer, your might be differnt
-           // this will active the realy 1 and deactivate relay 2, if set voltage value reach - end
+           int boost_addup_1 = 20;//The voltage addup in this steps by transformer. Use for displaying output voltage, your might be differnt
+           // In this voltage range relay 1 will activate, 2 will deactivate - end
        //transformer steps 2 end//
 
        //transformer steps 1 start//
-           // this will deactivate the realy 1 and relay 2 cus we dont need boost voltage is ok, if set voltage value reach - start
+           // In this voltage range relay 1 will deactivate, relay 2 will deactivate cus we dont need boost voltage is ok - start
            int step_5_1 = 210;// if greater than 210V
            int step_5_2 = 235;// if smaller than 235V
-           // this will deactivate the realy 1 and relay 2 cus we dont need boost voltage is ok, if set voltage value reach - end
+           // In this voltage range relay 1 will deactivate, relay 2 will deactivate cus we dont need boost voltage is ok - end
        //transformer steps 1 end//
 
-           // this will show High Voltage, if potection switch is on, then the relay3 will active, if the set voltage value is reach - start
+           // HIGH voltage, In this voltage range power will be cut  - start
            int step_6_1 = 235;// if greater than 235V
            int step_6_2 = 300;// if greater than 300V
-           // this will show Low Voltage, if potection switch is on, then the relay3 will active, if the set voltage value is reach - end
+           // HIGH voltage, In this voltage range power will be cut  - end
            
 
-     //transformer steps changing upon receiving voltage - area - end//
+    //Here you can set transfor steps voltage - Note this is 3 steps transformer - end//
 
      //input pin setup - Start
      int voltagesens = A0; //voltage sensor input setup
