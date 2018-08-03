@@ -1,4 +1,4 @@
-# Arduino-control-A.C-stabilizer-automatic
+# Arduino-control-A.C-stabilizer-automatic {Read This Important}
 Automatic voltage stabilizer with arduino that will show AC voltage, watt, steps, 
 transformer temperature &amp; auto fan on-off on LCD display
 
@@ -20,3 +20,12 @@ It also monitor temperature of the transformer,
 if temperature is getting high of the set point, it will turn on the fan.
 
 Make this stabilizer Follow Instructables -> https://www.instructables.com/id/How-to-Make-AC-220-Volt-Automatic-Stabilizer-Using/
+
+
+# Actual file description and programming
+
+//ac-stabilizer-arduino-complex-process-no-delay-used-for-relay.ino//
+This ino file program is written in complex method, user can only change the variable that is declare. This ino file is missing delay function, which is used to trigger relay in specif voltage difference. Although Its is safe but as there is no voltage difference, relay will trigger abnormally if voltage is hanging in between trigger voltage.
+
+//ac-stabilizer-arduino-easy-with-safe-delay-function.ino//
+This ino file program is written in easy method, users have to change value in function as well as in variable. This ino file is contain delay function, which is used to trigger relay in specif voltage difference. And it much safer and protects current spikes and fluctuation from rapid relay trigger.
