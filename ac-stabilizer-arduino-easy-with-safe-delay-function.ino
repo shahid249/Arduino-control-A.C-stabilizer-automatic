@@ -13,7 +13,7 @@
 
 */
 //include the library//
-#include <ACS712.h> //ACS712 current sensor library | Download - https://github.com/shahid249/ACS712-arduino-1
+#include <ACS712.h> //ACS712 current sensor library | Download - https://github.com/shahid249/ACS712-Arduino-Library
 #include <LiquidCrystal.h> // LCD library
 //include the library//
 
