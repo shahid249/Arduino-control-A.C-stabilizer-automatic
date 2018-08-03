@@ -160,7 +160,6 @@ void setup()
   lcd.setCursor(0, 1);// set the cursor to column 0, line 1
   lcd.print("BOOTING...");//lcd print
   delay(100);//delay
-  digitalWrite(displaywrite, HIGH);//LCD write disable
 }
 
 /***************************************************************************************************************/
@@ -513,7 +512,6 @@ void loop()
 
 
       else {
-        digitalWrite(displaywrite, HIGH);//LCD write disable
         displayreadenable = 1;
       }
     }
