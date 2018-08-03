@@ -201,15 +201,15 @@ void loop()
   if (digitalRead(protection) == HIGH) {
     prote = 1;
     if ((output_voltage_show <= 245) && (output_voltage_show >= 130)) {
-      digitalWrite(relay2, HIGH);
+      digitalWrite(relay2, LOW);
     }
     else {
-      digitalWrite(relay2, LOW);
+      digitalWrite(relay2, HIGH);
     }
   }
   else {
     prote = 2;
-    digitalWrite(relay2, HIGH);
+    digitalWrite(relay2, LOW);
   }
   // voltage protection //
 
