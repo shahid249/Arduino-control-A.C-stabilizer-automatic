@@ -15,17 +15,30 @@ Note:- output voltage is less accurate when more load is connect because there i
 
 ACS712 module sense how much current is drawn from output, 
 then arduino will calculate in watt and show in to the LCD display.
+Note: - You Have to include ACS712 Library.
 
 It also monitor temperature of the transformer, 
 if temperature is getting high of the set point, it will turn on the fan.
 
 Make this stabilizer Follow Instructables -> https://www.instructables.com/id/How-to-Make-AC-220-Volt-Automatic-Stabilizer-Using/
 
+Actual file description and programming explain here
+===============================================
+| AC_stabilizer_Complex_No_V_difference.ino | AC_stabilizer_EASY_With_V_difference.ino|
+|:------:|:-------:|
+| This ino file program is written in complex method, user can only change the variable that is declare. This ino file is missing delay function, which is used to trigger relay in specif voltage difference. Although Its is safe but as there is no voltage difference, relay will trigger abnormally if voltage is hanging in between trigger voltage.  | This ino file program is written in easy method, users have to change value in function as well as in variable. This ino file is contain delay function, which is used to trigger relay in specif voltage difference. And it much safer and protects current spikes and fluctuation from rapid relay trigger.|
 
-# Actual file description and programming
+What is voltage difference?
+===========================
+Voltage difference is worked based on the gap of set value 
+eg- 
+if((input_voltage_show <= 200) && (input_voltage_show >= 180)){step-1} 
+if((input_voltage_show <= 175) && (input_voltage_show >= 160)){step-2} 
 
-//ac-stabilizer-arduino-complex-process-no-delay-used-for-relay.ino//
-This ino file program is written in complex method, user can only change the variable that is declare. This ino file is missing delay function, which is used to trigger relay in specif voltage difference. Although Its is safe but as there is no voltage difference, relay will trigger abnormally if voltage is hanging in between trigger voltage.
+The difference of 5V is the thing that we need, because when we pull pin Low, it will remain Low until it will get pull high. 
+So we dont have to give continious cycle of pulling Low. So if voltage swing in between 180 - 175 it will not do any thing and use last state untill it fall below or up the values.
 
-//ac-stabilizer-arduino-easy-with-safe-delay-function.ino//
-This ino file program is written in easy method, users have to change value in function as well as in variable. This ino file is contain delay function, which is used to trigger relay in specif voltage difference. And it much safer and protects current spikes and fluctuation from rapid relay trigger.
+
+Why using voltage difference is good?
+===========================
+It is good to use voltage difference, it will prevent rapid transformer step change or continious relay trigger if voltage swing between set voltage. And it will also protect relays.
